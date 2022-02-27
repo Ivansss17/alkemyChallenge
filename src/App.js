@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
+import FoodApi from './componentes/menuContainer/api';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import FormUser from './componentes/formulario/formUser';
+import { BrowserRouter, Link, Navigate, Route, Routes, useNavigate  } from 'react-router-dom';
+import Menu from './componentes/menu/menu';
+
+
 function App() {
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        
+    <React.Fragment>
+     
+     <FormUser/>
+    
+  </React.Fragment>  
   );
 }
 
