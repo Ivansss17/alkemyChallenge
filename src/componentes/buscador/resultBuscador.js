@@ -4,20 +4,11 @@ import { Link } from 'react-router-dom'
 
 function ResultBuscador({Menus}) {
 
- // const [mostrar, setMostrar] = useState(true)
-//
- // if(Menus){
- //   setMostrar(false)
- // }
+
 
   return (
     <div className='cards'>
-     {/*  {mostrar?
-      <div>
-      <h2>no hay resultados de busqueda</h2>
-      <Nav.Link href='/'><Button>Volver a inicio</Button></Nav.Link></div>
-      :
-      <div> */}
+    
       
       {Menus.map(menu => <div className='cards' key={menu.id}>
       
@@ -43,13 +34,7 @@ function ResultBuscador({Menus}) {
              </div>
              
              )}
-              
-      
-      
-      
-      
-      
-     
+        
     </div>
   )
 }

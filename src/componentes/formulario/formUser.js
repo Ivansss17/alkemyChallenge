@@ -2,8 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import  { useState, useEffect } from 'react';
 import { Button, Form, Modal, Nav, Spinner } from 'react-bootstrap';
-import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom';
-import ModalEjemplo from './modal/modal'
 import Menu from '../menu/menu';
 import { Formik, validateYupSchema, yupToFormErrors } from 'formik';
 import * as Yup from 'yup';
@@ -12,11 +10,7 @@ import * as Yup from 'yup';
 
  function FormUser() { 
  
-  
-//validacion
 
-
-  
 
 
 const claveToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJjaGFsbGVuZ2VAYWxrZW15Lm9yZyIsImlhdCI6MTUxNjIzOTAyMn0.ilhFPrG0y7olRHifbjvcMOlH7q2YwlegT0f4aSbryBE'

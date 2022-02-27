@@ -2,17 +2,15 @@ import axios from 'axios';
 import { Formik } from 'formik'
 import React, { useState } from 'react'
 import { Button, Form, FormControl, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import ResultBuscador from './resultBuscador';
 
 function Buscador() {
 
 
-  const [show, setShow] = useState(true);
   
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  
+   
     const [Menus, setMenus] = useState([])
 
     const busquedaApi =async (search) =>{
@@ -35,12 +33,7 @@ function Buscador() {
          console.error(error);
         }
       }
-     /*  useEffect(()=>{
-         llamadaApi()
-         
-         
-       }, []) */
-
+    
 
 
     const SignupSchema = Yup.object().shape({

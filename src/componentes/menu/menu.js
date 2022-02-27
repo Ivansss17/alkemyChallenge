@@ -3,15 +3,12 @@ import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstr
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import FoodApi from '../menuContainer/api';
 
-import Home from '../home/home';
-
 import Detalle from '../otros/detalle';
 import { CartContextProvider, useCartContext } from '../cardContext/CardContext';
 import ResultBuscador from '../buscador/resultBuscador';
 import Buscador from '../buscador/buscador';
 
 
-// const {cantidadItems} = useCartContext()
 function Menu({props}) {
     console.log(props.usuarioOk, 'aqui')
      const [prop, setprop] = useState({
@@ -67,25 +64,7 @@ function Menu({props}) {
     
   </Routes>
   </BrowserRouter>
-             
-            
-        
-    
-  
-  {/*   <BrowserRouter>
-      <Routes>
-     {prop.mostrar? 
-        
-    <Route path='/login' exact element={<FormUser />}/>
-     : 
-    <Route path='/' exact element={<FoodApi />}/>
-    
-   
- 
-} 
-</Routes>
-  </BrowserRouter> */}
-  </CartContextProvider>
+ </CartContextProvider>
  
   )
 }
