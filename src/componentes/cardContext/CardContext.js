@@ -31,9 +31,9 @@ export const CartContextProvider = ({children})=>{
        alert('no puedes agregar el mismo plato al menu')
         }
         if(cantTotal >= 4){
-            alert('Alcanso el limite de platos para el menu')
-            console.log(cantTotal, 'total por item')
-       console.log('alcanso el limite de platos para el menu')
+            alert('Alcanso el limite de 4 platos para el menu')
+            
+       
         
         }
         if(cantVegan >= 2){

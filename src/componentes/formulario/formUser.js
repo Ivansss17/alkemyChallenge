@@ -15,7 +15,6 @@ import * as Yup from 'yup';
 
 const claveToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJjaGFsbGVuZ2VAYWxrZW15Lm9yZyIsImlhdCI6MTUxNjIzOTAyMn0.ilhFPrG0y7olRHifbjvcMOlH7q2YwlegT0f4aSbryBE'
 
-console.log(localStorage.getItem('token'))
 
 const [userok, setUserok] = useState({
   usuarioOk : true,
@@ -38,17 +37,11 @@ const [error, setError] = useState({
   errormsg:''
 })
 
-
-
-
-
-
 const tokenApi  = async (values) =>{
     let url = 'http://challenge-react.alkemy.org/'
     
     axios.post(url,values)
     .then (response =>{ 
-      console.log(response.statusText)
          if (response.statusText === 'OK'){
           localStorage.setItem('token',response.data.token)
           setMsj ({msjUser: 'ingreso correcto'})
@@ -67,7 +60,6 @@ const tokenApi  = async (values) =>{
       setUserok ({usuarioOk: false})
      
     }
-    console.log('renderiza')
     
   }, [])
 
@@ -87,16 +79,13 @@ const tokenApi  = async (values) =>{
   }}
    validate={(valores )=>{
      let errores = {}
-     console.log(valores)
      
      if(!valores.email){
-       console.log('no hay nada')
        errores.email = 'por favor ingrese un correo'
        errores.password = 'por favor ingrese su contraseña'
        
      }
      if(!valores.password){
-       console.log('no hay nada')
        errores.password = 'por favor ingrese su contraseña'
        
      }
@@ -105,8 +94,7 @@ const tokenApi  = async (values) =>{
    validationSchema = {SignupSchema}
    onSubmit={(valores)=>{
      tokenApi(valores)
-     console.log('enviado')
-     console.log(valores)
+     
 
    }
 

@@ -18,16 +18,9 @@ function Buscador() {
         try {
          const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch?query='+search+'&apiKey=10bce90bf3314da6a5d9d068e7b3fab3&includeNutrition=true&priceBreakdownWidget.json&number=5&instructionsRequired=true&addRecipeInformation=true');
          
-             console.log(response)
              const comidas = await response.data.results
            setMenus(comidas)
-           console.log(comidas)
-           
-         
-           
-           
-         
-        
+     
    
         } catch (error) {
          console.error(error);
@@ -50,12 +43,9 @@ function Buscador() {
                               validationSchema = {SignupSchema}
                               onSubmit={(valores)=>{
                                busquedaApi(valores.search)
-                                console.log('enviado')
-                                console.log(valores.search)
-
+                               
                               }}
 
-                              
                               >
                                 {({ values ,handleBlur, errors, touched, handleSubmit, handleChange})=>(
         <Form className="d-flex" onSubmit={handleSubmit}>

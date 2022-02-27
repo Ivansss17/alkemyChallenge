@@ -10,7 +10,7 @@ import Buscador from '../buscador/buscador';
 
 
 function Menu({props}) {
-    console.log(props.usuarioOk, 'aqui')
+   
      const [prop, setprop] = useState({
         mostrar : true
     })
@@ -28,7 +28,7 @@ function Menu({props}) {
      
     
     
-    console.log(prop)
+    
   return (
     <CartContextProvider>
     <BrowserRouter>
