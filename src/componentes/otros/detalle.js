@@ -25,7 +25,8 @@ function Detalle() {
 
    const llamadaApi =async () =>{
      try {  
-        const response = await axios.get('https://api.spoonacular.com/recipes/'+id+'/information?includeNutrition=false&apiKey=10bce90bf3314da6a5d9d068e7b3fab3&includeNutrition=true&instructionsRequired=true&addRecipeInformation=true&priceBreakdownWidget.json');
+       // const response = await axios.get('https://api.spoonacular.com/recipes/'+id+'/information?includeNutrition=false&apiKey=10bce90bf3314da6a5d9d068e7b3fab3&includeNutrition=true&instructionsRequired=true&addRecipeInformation=true&priceBreakdownWidget.json');
+        const response = await axios.get('https://api.spoonacular.com/recipes/'+id+'/information?includeNutrition=false&apiKey=059fb4273e4d4dfa819eaa7039877919&includeNutrition=true&instructionsRequired=true&addRecipeInformation=true&priceBreakdownWidget.json');
           
           const comidas = await response.data
           

@@ -19,39 +19,86 @@ export const CartContextProvider = ({children})=>{
     function agregarAlMenu (Menus){
         const indice = cartList.findIndex(i => i.id === Menus.id)
         const cantTotal = cartList.reduce((prev, cart) => prev + cart.cantidad , 0)
-        const filterVegan = contVegan.filter((producto) => producto.vegan === true)
+        const filterVegan = cartList.filter((producto) => producto.vegan === true)
         setContVegan(filterVegan)
         const cantVegan = contVegan.reduce((prev, cart) => prev + cart.cantidad , 0)
-        const filterNoVegan = contNoVegan.filter((producto) => producto.vegan === false)
+        const filterNoVegan = cartList.filter((producto) => producto.vegan === false)
         setContNoVegan(filterNoVegan)
         const cantNoVegan = contNoVegan.reduce((prev, cart) => prev + cart.cantidad , 0)
 
+        console.log(cantVegan, 'vegano', filterVegan)
+        console.log(cantNoVegan ,'no vegano' , filterNoVegan )
+        console.log(cartList)
+        
+
+
         if(indice > -1 ) {
        
-       alert('no puedes agregar el mismo plato al menu')
-        }
-        if(cantTotal >= 4){
-            alert('Alcanso el limite de 4 platos para el menu')
+            alert('no puedes agregar el mismo plato al menu')
+             }
+             if(cantTotal >= 4){
+                 alert('Alcanso el limite de 4 platos para el menu')
+                 
             
+             
+             }
+             if(cantVegan >= 2){
+                 alert('Alcanzo el limite de platos Veganos permitidos')
+     
+             }
+             if(cantNoVegan >= 2){
+                 alert('debe agregar menu vegano')
+     
+             }else{
+                 
+                 
+                 setCartList([...cartList, Menus])
+                 
+         }
+
+        /* if(indice > -1 ) {
        
-        
-        }
-        if(cantVegan >= 2){
-            alert('Alcanzo el limite de platos Veganos permitidos')
-
-        }
-        if(cantNoVegan >= 2){
-            alert('debe agregar menu vegano')
-
+       alert('no puedes agregar el mismo plato al menu')
         }else{
+            if(cantTotal >= 4 ){
+                alert('Alcanso el limite de 4 platos para el menu')
+                
+               
+        
+                }else{
+                    
+                        if(cantVegan >= 2 ){
+                            alert('Alcanzo el limite de platos Veganos permitidos')
+                
+                        } if (cantNoVegan >= 2){
+                            alert('Alcanzo el limite de platos no Veganos permitidos')
+    
+                        }if(cantVegan <= 2 && cantNoVegan <= 2    ){
+                           
+                            setCartList([...cartList, Menus])
+                            
+                        }else{
+                            if(cantNoVegan == 2 ){
+                                setCartList([...cartList, Menus])
+                            }else{
+                                if(cantVegan < 2 ){
+                                    setCartList([...cartList, Menus])
+                                }
+
+                            }
+     
+           
+                        }}
             
+
             
-            setCartList([...cartList, Menus])
-            
-    }
+    } */
+}
+        
+       
     
         
-    }
+   
    function sumaTotal(Menus){
     
     const total = cartList.reduce((prev, cart) => prev + cart.pricePerServing * cart.cantidad , 0)
