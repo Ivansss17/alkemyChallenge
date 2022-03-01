@@ -21,78 +21,53 @@ export const CartContextProvider = ({children})=>{
         const cantTotal = cartList.reduce((prev, cart) => prev + cart.cantidad , 0)
         const filterVegan = cartList.filter((producto) => producto.vegan === true)
         setContVegan(filterVegan)
-        const cantVegan = contVegan.reduce((prev, cart) => prev + cart.cantidad , 0)
+        const cantVegan = contVegan.reduce((prev, cart) => prev + cart.cantidad , 1)
         const filterNoVegan = cartList.filter((producto) => producto.vegan === false)
         setContNoVegan(filterNoVegan)
-        const cantNoVegan = contNoVegan.reduce((prev, cart) => prev + cart.cantidad , 0)
+        const cantNoVegan = contNoVegan.reduce((prev, cart) => prev + cart.cantidad , 1)
 
-        console.log(cantVegan, 'vegano', filterVegan)
-        console.log(cantNoVegan ,'no vegano' , filterNoVegan )
-        console.log(cartList)
-        
+       
 
 
         if(indice > -1 ) {
        
             alert('no puedes agregar el mismo plato al menu')
-             }
-             if(cantTotal >= 4){
-                 alert('Alcanso el limite de 4 platos para el menu')
-                 
-            
-             
-             }
-             if(cantVegan >= 2){
-                 alert('Alcanzo el limite de platos Veganos permitidos')
-     
-             }
-             if(cantNoVegan >= 2){
-                 alert('debe agregar menu vegano')
-     
              }else{
+                 if(cantTotal >= 4 ){
+                     alert('Alcanso el limite de 4 platos para el menu')
+                     
+                    
+             
+                     }else{
+                         
+                             if(cantVegan >= 2 && Menus.vegan){
+                                 alert('Alcanzo el limite de platos Veganos permitidos')
+                     
+                             } if (cantNoVegan >= 2 && Menus.vegan == false){
+                                 alert('Alcanzo el limite de platos no Veganos permitidos')
+         
+                             }if(cantVegan < 2 && cantNoVegan < 2    ){
+                                
+                                 setCartList([...cartList, Menus])
+                                 
+                             }else{
+                                 if(cantNoVegan < 2 && Menus.vegan == false){
+                                     setCartList([...cartList, Menus])
+                                 }else{
+                                     if(cantVegan < 2 && Menus.vegan){
+                                         setCartList([...cartList, Menus])
+                                     }
+     
+                                 }
+          
+                
+                             }}
                  
-                 
-                 setCartList([...cartList, Menus])
+     
                  
          }
 
-        /* if(indice > -1 ) {
        
-       alert('no puedes agregar el mismo plato al menu')
-        }else{
-            if(cantTotal >= 4 ){
-                alert('Alcanso el limite de 4 platos para el menu')
-                
-               
-        
-                }else{
-                    
-                        if(cantVegan >= 2 ){
-                            alert('Alcanzo el limite de platos Veganos permitidos')
-                
-                        } if (cantNoVegan >= 2){
-                            alert('Alcanzo el limite de platos no Veganos permitidos')
-    
-                        }if(cantVegan <= 2 && cantNoVegan <= 2    ){
-                           
-                            setCartList([...cartList, Menus])
-                            
-                        }else{
-                            if(cantNoVegan == 2 ){
-                                setCartList([...cartList, Menus])
-                            }else{
-                                if(cantVegan < 2 ){
-                                    setCartList([...cartList, Menus])
-                                }
-
-                            }
-     
-           
-                        }}
-            
-
-            
-    } */
 }
         
        
