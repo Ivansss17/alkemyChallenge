@@ -1,4 +1,9 @@
 # Getting Started with Create React App
+## Documentation
+
+Full project docs are available under `docs/`.
+
+- Start with `docs/DOCS.md` for the index.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
